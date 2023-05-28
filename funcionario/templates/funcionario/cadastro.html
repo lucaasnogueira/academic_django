@@ -1,0 +1,29 @@
+{% extends 'navbar.html' %}
+{% load static %}
+  
+
+{% block content %}
+    <link rel="stylesheet" href="{% static 'aluno/cadastro/cadastro.css' %}">
+    <div class="container">
+        <header>Cadastro de Funcionario </header>
+
+        <form action="#">
+            <div class="form first">
+                <div class="details personal">
+                    <span class="title">Informações do funcionario</span>
+
+                    <div class="fields">
+                        <div class="input-field">
+                            <div class="input-box">
+                                {% csrf_token %}
+                                {{ form.as_p }}
+                            </div>
+                            <div class="continue-button">
+                              <button type="submit"><a>Cadastrar</a></button>
+                            </div>
+                        </div>  
+                    </div>
+                </div>
+        </form>
+    </div>
+{% endblock %}

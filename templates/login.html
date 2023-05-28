@@ -1,0 +1,43 @@
+{% load static %}
+<!DOCTYPE html>
+<html lang="pt-br">
+<head>
+    <meta charset="UTF-8">
+    <meta http-equiv="X-UA-Compatible" content="IE=edge">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <link rel="stylesheet" href="{% static 'login/style_login.css' %}">
+    <title>Login</title>
+</head>
+<body>
+    <div class="container">
+        <div class="login-image">
+            <img src="{% static 'login/Taking notes-amico.svg' %}">
+        </div>
+    
+        <div class="login">
+            <div class="login-header">
+                <div class="title">
+                    <h1>Login</h1>
+                </div>
+            </div>
+    
+            <div class="login-group">
+                <form method="post" action="{% url 'auth' %}">
+                    {% csrf_token %}
+                    <div class="card-login">
+                        <div class="login-box">
+                            <label for="username">Usuário</label>
+                            <input type="text" name="username" placeholder="Usuário" required>
+                        </div>
+                        <div class="login-box">
+                            <label for="password">Senha</label>
+                            <input type="password" name="password" placeholder="Senha" required>
+                        </div>
+                        <button class="btn-login" type="submit"><a>Login</a></button>
+                    </div>
+                </form>
+            </div>
+        </div>
+    </div>
+</body>
+</html>

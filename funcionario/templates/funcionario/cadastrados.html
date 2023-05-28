@@ -1,0 +1,90 @@
+{% extends 'navbar.html' %}
+{% load static %}
+
+{% block content %}
+
+<link rel="stylesheet" href="{% static 'lista/lista.css' %}">
+    <div class="container">
+        <div class="list">
+
+            <div class="list-header">
+                <div class="title">
+                    <h1>Lista de professores</h1>
+                </div>
+            </div>
+
+            <div class="filter-container">
+                <input type="text" class="filter-input" placeholder="Buscar" onkeyup="filterTable()">
+                <button class="filter-button"><a>Buscar</a></button>
+            </div>
+
+            <div class="button-container">
+                <div class="button-add">
+                    <button><a href="{% url 'funcionario_cadastrar' %}">Cadastrar</a></button>
+                </div>
+            </div>
+            
+            <div class="list-group">
+                <table id="funcionario-table" class="list-box">
+                    <tr>
+                        <th>ID</th>
+                        <th>Nome</th>
+                        <th>Email</th>
+                        <th>Telefone</th>
+                        <th>Cargo</th>
+                        <th>Escolaridade</th>
+                        <th>Titulação</th>
+                        <th>Regime</th>
+                        <th>Admissão</th>
+                    </tr>
+                    
+                    {% for funcionario in funcionarios %}
+                    <tr>
+                        <td><a id=id href="{% url 'funcionario_update' funcionario.id %}">{{ funcionario.id }}</a></td>
+                        <td>{{ funcionario.nome }}</td>
+                        <td>{{ funcionario.email }}</td>
+                        <td>{{ funcionario.telefone }}</td>
+                        <td>{{ funcionario.cargo }}</td>
+                        <td>{{ funcionario.escolaridade }}</td>
+                        <td>{{ funcionario.titulacao }}</td>
+                        <td>{{ funcionario.regime }}</td>
+                        <td>{{ funcionario.admissao }}</td>
+                    </tr>
+                    {% endfor %}
+                </table>
+            </div>
+        </div>
+    </div>
+
+    <script>
+        function filterTable() {
+            var input, filter, table, tr, td, i, j, txtValue;
+            input = document.getElementsByClassName("filter-input")[0];
+            filter = input.value.toUpperCase();
+            table = document.getElementById("funcionarios-table");
+            tr = table.getElementsByTagName("tr");
+    
+            for (i = 0; i < tr.length; i++) {
+                var match = false;
+                td = tr[i].getElementsByTagName("td");
+    
+                for (j = 0; j < td.length; j++) {
+                    if (td[j]) {
+                        txtValue = td[j].textContent || td[j].innerText;
+                        if (txtValue.toUpperCase().indexOf(filter) > -1) {
+                            match = true;
+                            break;
+                        }
+                    }
+                }
+    
+                if (match) {
+                    tr[i].style.display = "";
+                } else {
+                    tr[i].style.display = "none";
+                }
+            }
+        }
+    </script>
+
+{% endblock %}

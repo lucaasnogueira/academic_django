@@ -1,0 +1,255 @@
+{% load static %}
+
+<!DOCTYPE html>
+    <html lang="pt-br">
+    <head>
+        <meta charset="UTF-8">
+        <meta name="viewport" content="width=device-width, initial-scale=1.0">
+
+        <!--=============== REMIXICONS ===============-->
+        <link href="https://cdn.jsdelivr.net/npm/remixicon@2.5.0/fonts/remixicon.css" rel="stylesheet">
+
+        <!--=============== CSS ===============-->
+        <link rel="stylesheet" href="{% static 'nav/assets1/css/styles.css' %}">
+
+        <title>AcademicPro</title>
+    </head>
+    <body>
+        <!--=============== HEADER ===============-->
+        <header class="header">
+            <nav class="nav container">
+                <div class="nav__data">
+                    <a href="{% url 'welcome' %}" class="nav__logo">
+                        AcademicPro
+                    </a>
+    
+                    <div class="nav__toggle" id="nav-toggle">
+                        <i class="ri-menu-line nav__toggle-menu"></i>
+                        <i class="ri-close-line nav__toggle-close"></i>
+                    </div>
+                </div>
+
+                <!--=============== NAV MENU ===============-->
+                <div class="nav__menu" id="nav-menu">
+                    <ul class="nav__list">
+                        <li>
+                            <a href="{% url 'welcome' %}" class="nav__link">Home</a>
+                        </li>
+
+                        <!--=============== DROPDOWN 1 ===============-->
+                        <li class="dropdown__item">                      
+                            <div class="nav__link dropdown__button">
+                                Alunos <i class="ri-arrow-down-s-line dropdown__arrow"></i>
+                            </div>
+
+                            <div class="dropdown__container">
+                                <div class="dropdown__content">
+                                    <div class="dropdown__group">
+                                        <div class="dropdown__icon">
+                                            <i class="ri-flashlight-line"></i>
+                                        </div>
+    
+                                        <span class="dropdown__title">Adicionar</span>
+    
+                                        <ul class="dropdown__list">
+                                            <li>
+                                                <a href="#" class="dropdown__link">Matricula</a>
+                                            </li>
+                                            <li>
+                                                <a href="#" class="dropdown__link">Editar matrícula</a>
+                                            </li>
+                                        </ul>
+                                    </div>
+    
+                                    <div class="dropdown__group">
+                                        <div class="dropdown__icon">
+                                            <i class="ri-heart-3-line"></i>
+                                        </div>
+    
+                                        <span class="dropdown__title">Lista</span>
+    
+                                        <ul class="dropdown__list">
+                                            <li>
+                                                <a href="#" class="dropdown__link">Fundamental</a>
+                                            </li>
+                                            <li>
+                                                <a href="#" class="dropdown__link">Médio</a>
+                                            </li>
+                                        </ul>
+                                    </div>
+    
+                                    <div class="dropdown__group">
+                                        <div class="dropdown__icon">
+                                            <i class="ri-book-mark-line"></i>
+                                        </div>
+    
+                                        <span class="dropdown__title">Material</span>
+    
+                                        <ul class="dropdown__list">
+                                            <li>
+                                                <a href="#" class="dropdown__link">Publicar atividades</a>
+                                            </li>
+                                            <li>
+                                                <a href="#" class="dropdown__link">Materiais publicados</a>
+                                            </li>
+                                        </ul>
+                                    </div>
+    
+                                    <div class="dropdown__group">
+                                        <div class="dropdown__icon">
+                                            <i class="ri-file-paper-2-line"></i>
+                                        </div>
+    
+                                        <span class="dropdown__title">Solicitações</span>
+    
+                                        <ul class="dropdown__list">
+                                            <li>
+                                                <a href="#" class="dropdown__link">Comprovante de matricula</a>
+                                            </li>
+                                            <li>
+                                                <a href="#" class="dropdown__link">Certificados</a>
+                                            </li>
+                                        </ul>
+                                    </div>
+                                </div>
+                            </div>
+                        </li>
+
+                        <!--=============== DROPDOWN 2 ===============-->
+                        <li class="dropdown__item">
+                            <div class="nav__link dropdown__button">
+                                Funcionários <i class="ri-arrow-down-s-line dropdown__arrow"></i>
+                            </div>
+
+                            <div class="dropdown__container">
+                                <div class="dropdown__content">
+                                    <div class="dropdown__group">
+                                        <div class="dropdown__icon">
+                                            <i class="ri-code-line"></i>
+                                        </div>
+    
+                                        <span class="dropdown__title">Professor</span>
+                                        <ul class="dropdown__list">
+                                            <li>
+                                                <a href="#" class="dropdown__link">Adicionar</a>
+                                            </li>
+                                            <li>
+                                                <a href="#" class="dropdown__link">Lista</a>
+                                            </li>
+                                            <li>
+                                                <a href="#" class="dropdown__link">Controle de Ponto</a>
+                                            </li>
+                                            <li>
+                                                <a href="#" class="dropdown__link">Publicar material</a>
+                                            </li>
+                                            <li>
+                                                <a href="#" class="dropdown__link">Chamada</a>
+                                            </li>
+
+                                        </ul>
+                                    </div>
+    
+                                    <div class="dropdown__group">
+                                        <div class="dropdown__icon">
+                                            <i class="ri-pen-nib-line"></i>
+                                        </div>
+    
+                                        <span class="dropdown__title">Administrativo</span>
+    
+                                        <ul class="dropdown__list">
+                                            <li>
+                                                <a href="#" class="dropdown__link">Adicionar</a>
+                                            </li>
+                                            <li>
+                                                <a href="#" class="dropdown__link">Lista</a>
+                                            </li>
+                                            <li>
+                                                <a href="#" class="dropdown__link">Controle de Ponto</a>
+                                            </li>
+                                        </ul>
+                                    </div>
+    
+                                    <div class="dropdown__group">
+                                        <div class="dropdown__icon">
+                                            <i class="ri-apps-2-line"></i>
+                                        </div>
+    
+                                        <span class="dropdown__title">Operacional</span>
+    
+                                        <ul class="dropdown__list">
+                                            <li>
+                                                <a href="#" class="dropdown__link">Adicionar</a>
+                                            </li>
+                                            <li>
+                                                <a href="#" class="dropdown__link">Lista</a>
+                                            </li>
+                                            <li>
+                                                <a href="#" class="dropdown__link">Controle de Ponto</a>
+                                            </li>
+                                        </ul>
+                                    </div>
+                                </div>
+                            </div>
+                        </li>
+
+                        <li>
+                            <a href="#" class="nav__link">Relatórios</a>
+                        </li>
+
+                        <!--=============== DROPDOWN 3 ===============-->
+                        <li class="dropdown__item">                        
+                            <div class="nav__link dropdown__button">
+                                Documentos <i class="ri-arrow-down-s-line dropdown__arrow"></i>
+                            </div>
+
+                            <div class="dropdown__container">
+                                <div class="dropdown__content">
+                                    <div class="dropdown__group">
+                                        <div class="dropdown__icon">
+                                            <i class="ri-community-line"></i>
+                                        </div>
+    
+                                        <span class="dropdown__title">Funcionários</span>
+    
+                                        <ul class="dropdown__list">
+                                            <li>
+                                                <a href="#" class="dropdown__link">Atestados</a>
+                                            </li>
+                                            <li>
+                                                <a href="#" class="dropdown__link">Holerite</a>
+                                            </li>
+                                            <li>
+                                                <a href="#" class="dropdown__link">Documentos</a>
+                                            </li>
+                                        </ul>
+                                    </div>
+    
+                                    <div class="dropdown__group">
+                                        <div class="dropdown__icon">
+                                            <i class="ri-shield-line"></i>
+                                        </div>
+    
+                                        <span class="dropdown__title">Alunos</span>
+    
+                                        <ul class="dropdown__list">
+                                            <li>
+                                                <a href="#" class="dropdown__link">Documentos</a>
+                                            </li>
+                                            <li>
+                                                <a href="#" class="dropdown__link">Comprovantes</a>
+                                            </li>
+                                        </ul>
+                                    </div>
+                                </div>
+                            </div>
+                        </li>
+                    </ul>
+                </div>
+            </nav>
+        </header>
+        
+        <script src= "{% static 'nav/assets1/js/main.js' %}"></script>
+        {% block content %}
+        {% endblock %}
+    </body>
+</html>
